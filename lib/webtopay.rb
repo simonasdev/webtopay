@@ -1,8 +1,8 @@
-require 'webtopay/exception'
-require 'webtopay/configuration'
-require 'webtopay/api'
-require 'webtopay_controller'
-require 'webtopay_helper'
+require 'rubygems'
+require 'digest/md5'
+require 'openssl'
+require 'open-uri'
+require 'httparty'
 
 module WebToPay
   class << self
@@ -13,8 +13,20 @@ module WebToPay
       yield(config)
     end
   end
-end
 
-ActionController::Base.send(:include, WebToPayController)
-ActionView::Base.send(:include, WebToPayHelper)
+  autoload :Exception, 'webtopay/exception'
+  autoload :Configuration, 'webtopay/configuration'
+  autoload :ControllerHelper, 'webtopay/controller_helper'
+  autoload :Helper, 'webtopay/helper'
+  autoload :Configuration, 'webtopay/configuration'
+
+  module Api
+    autoload :Base, 'webtopay/api/base'
+    autoload :Request, 'webtopay/api/request'
+    autoload :Response, 'webtopay/api/response'
+    autoload :PaymentMethod, 'webtopay/api/payment_method'
+    autoload :Filter, 'webtopay/api/filter'
+  end
+
+end
 

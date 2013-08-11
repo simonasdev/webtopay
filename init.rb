@@ -1,2 +1,2 @@
-require 'webtopay'
+require_relative 'lib/webtopay'
 

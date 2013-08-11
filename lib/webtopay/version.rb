@@ -1,4 +1,4 @@
-module Webtopay
-  VERSION = "1.2.1"
+module WebToPay
+  VERSION = "2.0"
 end
 
