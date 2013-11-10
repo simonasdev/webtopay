@@ -8,7 +8,7 @@ Installation
 
 Add to your Gemfile:
 ```
-gem 'webtopay', git: 'git://github.com/kurbaitis/webtopay.git'
+gem 'webtopay', git: 'https://github.com/kurbaitis/webtopay.git'
 ```
 Run:
 ```
@@ -40,12 +40,12 @@ Protect accepturl, cancelurl, callbackurl actions in controllers:
   def accept
     # write here code which do some stuff
     # use instance variable "webtopay_data" to access data from mokejimai.lt
-    render text: "Your payment #{webtopay_data[:orderid]} has been successfully received. Thank you!" 
+    render text: "Your payment #{webtopay_data[:orderid]} has been successfully received. Thank you!"
   end
-  
+
   def callback
     # write here code which do some stuff
-    render text: "OK" 
+    render text: "OK"
   end
 ```
 
