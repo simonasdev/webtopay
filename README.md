@@ -50,7 +50,11 @@ Protect accepturl, cancelurl, callbackurl actions in controllers:
 ```
 
 You can also use helper method to generate required form for MACRO payments in templates:
-
+app/helpers/application_helper.rb:
+```ruby
+  include WebToPay::Helper
+```
+Any template (please note that the form doesn't contain any submit button, it needs to be submitted with JS)
 ```ruby
 <%= webtopay_macro_form test: 1, orderid: 123, amount: 2000, payment: 'vb', country: 'lt', paytext: "Billing for XX at the website XXX" %>
 
