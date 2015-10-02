@@ -4,7 +4,7 @@ require 'spec_helper'
 describe WebToPay::Api::PaymentMethod do
 
   let(:params) { {language: 'lt', payment_group: 'e-banking', country: 'lt'} }
-  let(:parsed_response) {MultiJson.load(File.read(File.join(File.dirname(__FILE__), '..', 'fixtures', 'payment_methods.json')))}
+  let(:parsed_response) {JSON.load(File.read(File.join(File.dirname(__FILE__), '..', 'fixtures', 'payment_methods.json')))}
   let(:api_path) {
     "/new/api/paymentMethods/#{WebToPay.config.project_id}/currency:#{request_params[:currency]}/amount:#{request_params[:amount]}"
   }

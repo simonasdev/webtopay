@@ -8,9 +8,9 @@ Installation
 
 Add to your Gemfile:
 ```
-gem 'webtopay', git: 'https://github.com/kurbaitis/webtopay.git'
+gem 'webtopay', git: 'https://github.com/Batiskaf/webtopay.git'
 ```
-Run:
+Run:b
 ```
 bundle install
 ```
