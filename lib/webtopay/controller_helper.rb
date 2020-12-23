@@ -2,7 +2,7 @@ module WebToPay
   module ControllerHelper
     module ClassMethods
       def webtopay(*actions)
-        before_filter :webtopay_check, only: actions
+        before_action :webtopay_check, only: actions
         attr_reader :webtopay_data
       end
     end
