@@ -17,7 +17,7 @@ module WebToPay
       begin
         @webtopay_data = WebToPay::Api::Response.new(params[:data], params[:ss2]).check_response
       rescue WebToPay::Exception => e
-        render :text => e.message, :status => 500
+        render plain: e.message, status: 500
       end
     end
   end
