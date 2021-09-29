@@ -71,7 +71,7 @@ module WebToPay
       end
 
       def public_key
-        @public_key ||= OpenSSL::X509::Certificate.new(open(cert_path).read).public_key
+        @public_key ||= OpenSSL::X509::Certificate.new(URI.open(cert_path).read).public_key
       end
 
       def response_type
